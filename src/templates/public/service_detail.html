@@ -1,0 +1,125 @@
+{% extends "public/base.html" %}
+
+{% block title %}{{ service.name }} - {{ _('Pachamama Ecoturismo') }}{% endblock %}
+
+{% block content %}
+    <h2>{{ service.name }}</h2>
+    <div class="service-detail" style="background-color: #fff; padding: 20px; border-radius: 5px;">
+        <p><strong>{{ _('Categoria:') }}</strong> {{ service.category.replace("_", " ").title() }}</p>
+        
+        <div class="service-images" style="margin-bottom: 20px;">
+            {% set category = service.category.lower() %}
+            {% if category == 'camping' or service.name == 'Hospedagem em Camping' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barracas_coloridas.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barracas_coloridas.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barraca_azul_plataforma.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_area_deck.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_area_fogueira.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barraca_azul_plataforma_nova.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barraca_verde_plataforma.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_area_plataformas.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/camping_novo/camping_barraca_verde_detalhe.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                </div>
+            {% elif category == 'hospedagem' and service.name == 'Hospedagem em Cabana' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_exterior.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_exterior.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_cozinha.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_cozinha_detalhe.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_sala.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_sala_completa.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_quarto.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_quarto_detalhe.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/hospedagem_cabana/cabana_banheiro.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                </div>
+            {% elif category == 'hospedagem' or category == 'hospedagem_em_cabana' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/hospedagem/hospedagem_flores.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+            {% elif category == 'passeio' and service.name == 'Passeio de Caiaque Pachamama' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/caiaques_margem_rio_01.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/caiaques_margem_rio_01.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/caiaques_margem_rio_02.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/mirante_madeira_01.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/mirante_madeira_02.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/trilha_madeira_01.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/trilha_madeira_02.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/vista_rio_01.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/vista_rio_02.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/vista_rio_03.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/passeio_pachamama/vista_rio_04.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                </div>
+            {% elif category == 'aluguel' and service.name == 'Quiosque Grande' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_balcao_churrasqueira.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_balcao_churrasqueira.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_vista_frontal.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_area_mesa.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_vista_lateral.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_vista_ampla.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_forno_lenha.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_mesa_azul.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_decoracao_interna.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_vista_externa.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_vista_natureza.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_grande/quiosque_forno_noite.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                </div>
+            {% elif category == 'aluguel' and service.name == 'Quiosque Pequeno' %}
+                <div style="max-width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <img src="{{ url_for('static', filename='images/quiosque_pequeno/quiosque_pequeno_vista_interna.jpeg') }}" alt="{{ service.name }}" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/quiosque_pequeno/quiosque_pequeno_vista_interna.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_pequeno/quiosque_pequeno_caminho.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_pequeno/quiosque_pequeno_area_cozinha.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                    <img src="{{ url_for('static', filename='images/quiosque_pequeno/quiosque_pequeno_vista_lateral.jpeg') }}" alt="{{ service.name }}" style="width: 100px; height: 75px; object-fit: cover; border-radius: 4px; cursor: pointer;">
+                </div>
+            {% else %}
+                <div style="height: 300px; background-color: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <i class="fas fa-image" style="font-size: 64px; color: #aaa;"></i>
+                    <p style="margin-top: 15px; color: #888;">{{ _('Imagens em breve') }}</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <p><strong>{{ _('Descrição:') }}</strong></p>
+        <div style="white-space: pre-wrap;">{{ service.description }}</div>
+
+        <p><strong>{{ _('Preço:') }}</strong> R$ {{ "%.2f"|format(service.price|float) }} {{ service.price_description if service.price_description }}</p>
+        
+        {% if service.duration %}
+            <p><strong>{{ _('Duração:') }}</strong> {{ service.duration }}</p>
+        {% endif %}
+        
+        {% if service.capacity %}
+            <p><strong>{{ _('Capacidade:') }}</strong> {{ service.capacity }} {{ _('pessoas/vagas') }}</p>
+        {% endif %}
+        
+        {% if service.included_items %}
+            <p><strong>{{ _('Itens Inclusos:') }}</strong></p>
+            <div style="white-space: pre-wrap;">{{ service.included_items }}</div>
+        {% endif %}
+        
+        {% if service.what_to_bring %}
+            <p><strong>{{ _('O que levar:') }}</strong></p>
+            <div style="white-space: pre-wrap;">{{ service.what_to_bring }}</div>
+        {% endif %}
+        
+        {% if service.additional_info %}
+            <p><strong>{{ _('Informações Adicionais:') }}</strong></p>
+            <div style="white-space: pre-wrap;">{{ service.additional_info }}</div>
+        {% endif %}
+
+        <a href="{{ url_for('main.book_service', service_id=service.id) }}" style="display: inline-block; margin-top: 20px; padding: 12px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; font-size: 1.1em;">{{ _('Reservar Agora') }}</a>
+    </div>
+{% endblock %}

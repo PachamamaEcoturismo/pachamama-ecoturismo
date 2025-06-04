@@ -1,0 +1,48 @@
+{% extends "public/base.html" %}
+
+{% block title %}Confirmação da Reserva - Pachamama Ecoturismo{% endblock %}
+
+{% block content %}
+    <h2>Solicitação de Reserva Recebida!</h2>
+
+    {% if booking %}
+        <div class="booking-confirmation" style="background-color: #fff; padding: 20px; border-radius: 5px;">
+            <p>Olá, <strong>{{ booking.customer_name }}</strong>!</p>
+            <p>Sua solicitação de reserva para o serviço <strong>{{ booking.service.name }}</strong> foi recebida com sucesso.</p>
+            <p>Em breve, nossa equipe entrará em contato para confirmar os detalhes e fornecer as instruções para pagamento.</p>
+            
+            <h3>Detalhes da Solicitação:</h3>
+            <ul>
+                <li><strong>Número da Solicitação:</strong> #{{ booking.id }}</li>
+                <li><strong>Serviço:</strong> {{ booking.service.name }}</li>
+                <li><strong>Data de Início:</strong> {{ booking.start_date.strftime("%d/%m/%Y") }}</li>
+                {% if booking.end_date %}
+                <li><strong>Data de Fim:</strong> {{ booking.end_date.strftime("%d/%m/%Y") }}</li>
+                {% endif %}
+                <li><strong>Adultos:</strong> {{ booking.num_adults }}</li>
+                {% if booking.num_children > 0 %}
+                <li><strong>Crianças:</strong> {{ booking.num_children }}</li>
+                {% endif %}
+                <li><strong>Valor Total Estimado:</strong> R$ {{ "%.2f"|format(booking.total_price|float) }}</li>
+                <li><strong>Status Atual:</strong> {{ booking.status }}</li>
+            </ul>
+            
+            <p><strong>Seus Dados Informados:</strong></p>
+            <ul>
+                <li><strong>Nome:</strong> {{ booking.customer_name }}</li>
+                <li><strong>CPF:</strong> {{ booking.customer_cpf }}</li>
+                <li><strong>Data de Nascimento:</strong> {{ booking.customer_birth_date.strftime("%d/%m/%Y") }}</li>
+                <li><strong>E-mail:</strong> {{ booking.customer_email }}</li>
+                <li><strong>Telefone:</strong> {{ booking.customer_phone if booking.customer_phone else "Não informado" }}</li>
+                <li><strong>Endereço:</strong> {{ booking.customer_address }}</li>
+            </ul>
+
+            <p>Enviamos um e-mail para <strong>{{ booking.customer_email }}</strong> com estas informações. Por favor, verifique sua caixa de entrada (e spam).</p>
+            <p>Obrigado por escolher o Pachamama Ecoturismo!</p>
+            <p><a href="{{ url_for('main.index') }}">Voltar para a Página Inicial</a></p>
+        </div>
+    {% else %}
+        <p>Não foi possível carregar os detalhes da sua solicitação de reserva. Por favor, entre em contato conosco.</p>
+    {% endif %}
+
+{% endblock %}

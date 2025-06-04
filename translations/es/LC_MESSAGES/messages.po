@@ -1,0 +1,243 @@
+# Spanish translations for Pachamama Ecoturismo
+# Copyright (C) 2025 Pachamama Ecoturismo
+# This file is distributed under the same license as the Pachamama Ecoturismo project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-30 19:44+0000\n"
+"PO-Revision-Date: 2025-05-30 19:44+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: src/routes/main_routes.py:70
+msgid "Todos os campos obrigatórios devem ser preenchidos."
+msgstr "Todos los campos obligatorios deben ser completados."
+
+#: src/routes/main_routes.py:87
+msgid "Formato de data inválido. Use o formato AAAA-MM-DD ou DD/MM/AAAA."
+msgstr "Formato de fecha inválido. Utilice el formato AAAA-MM-DD o DD/MM/AAAA."
+
+#: src/routes/main_routes.py:95
+msgid "Data final deve ser após a data inicial."
+msgstr "La fecha final debe ser posterior a la fecha inicial."
+
+#: src/routes/main_routes.py:126
+msgid "Integração com pagamento não configurada pelo administrador."
+msgstr "Integración de pago no configurada por el administrador."
+
+#: src/routes/main_routes.py:161
+msgid "Retorno de pagamento inválido da InfinityPay."
+msgstr "Retorno de pago inválido de InfinityPay."
+
+#: src/routes/main_routes.py:167
+msgid "Reserva não encontrada para este retorno de pagamento."
+msgstr "Reserva no encontrada para este retorno de pago."
+
+#: src/routes/main_routes.py:171
+msgid "Esta reserva (ID: {}) já foi processada."
+msgstr "Esta reserva (ID: {}) ya ha sido procesada."
+
+#: src/routes/main_routes.py:177
+msgid "Erro na verificação: Integração com pagamento não configurada pelo administrador."
+msgstr "Error en la verificación: Integración de pago no configurada por el administrador."
+
+#: src/routes/main_routes.py:196
+msgid "Pagamento confirmado e reserva efetivada com sucesso!"
+msgstr "¡Pago confirmado y reserva completada con éxito!"
+
+#: src/routes/main_routes.py:201
+msgid "O pagamento não pôde ser confirmado. Status: {}. Por favor, tente novamente ou entre em contato."
+msgstr "El pago no pudo ser confirmado. Estado: {}. Por favor, intente nuevamente o contáctenos."
+
+#: src/routes/main_routes.py:207
+msgid "Ocorreu um erro ao verificar seu pagamento. Por favor, entre em contato conosco."
+msgstr "Ocurrió un error al verificar su pago. Por favor, contáctenos."
+
+#: src/templates/public/base.html:7 src/templates/public/base.html:26
+#: src/templates/public/base.html:47
+msgid "Pachamama Ecoturismo"
+msgstr "Pachamama Ecoturismo"
+
+#: src/templates/public/base.html:32
+msgid "Início"
+msgstr "Inicio"
+
+#: src/templates/public/base.html:33
+msgid "Serviços"
+msgstr "Servicios"
+
+#: src/templates/public/base.html:47
+msgid "Todos os direitos reservados."
+msgstr "Todos los derechos reservados."
+
+#: src/templates/public/booking_form.html:3
+msgid "Formulário de Reserva"
+msgstr "Formulario de Reserva"
+
+#: src/templates/public/booking_form.html:7
+msgid "Informações Pessoais"
+msgstr "Información Personal"
+
+#: src/templates/public/booking_form.html:9
+msgid "Nome Completo:"
+msgstr "Nombre Completo:"
+
+#: src/templates/public/booking_form.html:14
+msgid "CPF:"
+msgstr "Número de Identificación:"
+
+#: src/templates/public/booking_form.html:19
+msgid "Data de Nascimento:"
+msgstr "Fecha de Nacimiento:"
+
+#: src/templates/public/booking_form.html:24
+msgid "Endereço:"
+msgstr "Dirección:"
+
+#: src/templates/public/booking_form.html:29
+msgid "Email:"
+msgstr "Correo Electrónico:"
+
+#: src/templates/public/booking_form.html:34
+msgid "Telefone:"
+msgstr "Teléfono:"
+
+#: src/templates/public/booking_form.html:39
+msgid "Detalhes da Reserva"
+msgstr "Detalles de la Reserva"
+
+#: src/templates/public/booking_form.html:41
+msgid "Data de Início:"
+msgstr "Fecha de Inicio:"
+
+#: src/templates/public/booking_form.html:47
+msgid "Data de Término:"
+msgstr "Fecha de Finalización:"
+
+#: src/templates/public/booking_form.html:54
+msgid "Número de Adultos:"
+msgstr "Número de Adultos:"
+
+#: src/templates/public/booking_form.html:59
+msgid "Número de Crianças:"
+msgstr "Número de Niños:"
+
+#: src/templates/public/booking_form.html:64
+msgid "Enviar Reserva"
+msgstr "Enviar Reserva"
+
+#: src/templates/public/index.html:3
+msgid "Bem-vindo ao Pachamama Ecoturismo"
+msgstr "Bienvenido a Pachamama Ecoturismo"
+
+#: src/templates/public/index.html:7
+msgid "Bem-vindo ao Pachamama Ecoturismo!"
+msgstr "¡Bienvenido a Pachamama Ecoturismo!"
+
+#: src/templates/public/index.html:8
+msgid "Onde a natureza acolhe, o rio guia e a aventura começa."
+msgstr "Donde la naturaleza acoge, el río guía y la aventura comienza."
+
+#: src/templates/public/index.html:9
+msgid "Estamos construindo uma experiência online incrível para você explorar nossos serviços de hospedagem, passeios de caiaque, expedições e muito mais. Por enquanto, você já pode navegar em nossos"
+msgstr "Estamos construyendo una increíble experiencia en línea para que explores nuestros servicios de hospedaje, paseos en kayak, expediciones y mucho más. Mientras tanto, ya puedes navegar por nuestros"
+
+#: src/templates/public/index.html:9
+msgid "serviços disponíveis"
+msgstr "servicios disponibles"
+
+#: src/templates/public/index.html:10
+msgid "Agradecemos a sua visita e paciência!"
+msgstr "¡Gracias por tu visita y paciencia!"
+
+#: src/templates/public/index.html:15
+msgid "Destaques:"
+msgstr "Destacados:"
+
+#: src/templates/public/index.html:22
+msgid "Saiba Mais"
+msgstr "Saber Más"
+
+#: src/templates/public/index.html:25
+msgid "Nenhum serviço em destaque no momento."
+msgstr "No hay servicios destacados en este momento."
+
+#: src/templates/public/service_detail.html:7
+msgid "Categoria:"
+msgstr "Categoría:"
+
+#: src/templates/public/service_detail.html:45
+msgid "Imagens em breve"
+msgstr "Imágenes próximamente"
+
+#: src/templates/public/service_detail.html:50
+msgid "Descrição:"
+msgstr "Descripción:"
+
+#: src/templates/public/service_detail.html:53
+msgid "Preço:"
+msgstr "Precio:"
+
+#: src/templates/public/service_detail.html:56
+msgid "Duração:"
+msgstr "Duración:"
+
+#: src/templates/public/service_detail.html:60
+msgid "Capacidade:"
+msgstr "Capacidad:"
+
+#: src/templates/public/service_detail.html:60
+msgid "pessoas/vagas"
+msgstr "personas/plazas"
+
+#: src/templates/public/service_detail.html:64
+msgid "Itens Inclusos:"
+msgstr "Artículos Incluidos:"
+
+#: src/templates/public/service_detail.html:69
+msgid "O que levar:"
+msgstr "Qué Llevar:"
+
+#: src/templates/public/service_detail.html:74
+msgid "Informações Adicionais:"
+msgstr "Información Adicional:"
+
+#: src/templates/public/service_detail.html:79
+msgid "Reservar Agora"
+msgstr "Reservar Ahora"
+
+#: src/templates/public/services.html:3
+msgid "Nossos Serviços"
+msgstr "Nuestros Servicios"
+
+#: src/templates/public/services.html:6
+msgid "Nossos Serviços"
+msgstr "Nuestros Servicios"
+
+#: src/templates/public/services.html:21
+msgid "Imagem em breve"
+msgstr "Imagen próximamente"
+
+#: src/templates/public/services.html:26
+msgid "Categoria:"
+msgstr "Categoría:"
+
+#: src/templates/public/services.html:28
+msgid "Preço:"
+msgstr "Precio:"
+
+#: src/templates/public/services.html:29
+msgid "Ver Detalhes e Reservar"
+msgstr "Ver Detalles y Reservar"
+
+#: src/templates/public/services.html:34
+msgid "Nenhum serviço disponível no momento. Volte em breve!"
+msgstr "No hay servicios disponibles en este momento. ¡Vuelve pronto!"

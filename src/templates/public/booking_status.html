@@ -1,0 +1,64 @@
+{% extends "public/base.html" %}
+
+{% block title %}Status da Reserva - Pachamama Ecoturismo{% endblock %}
+
+{% block content %}
+    <h2>Status da Sua Reserva #{{ booking.id }}</h2>
+
+    <div class="booking-status-details" style="background-color: #fff; padding: 20px; border-radius: 5px;">
+        <p><strong>Serviço:</strong> {{ booking.service.name }}</p>
+        <p><strong>Data de Início:</strong> {{ booking.start_date.strftime("%d/%m/%Y") }}</p>
+        {% if booking.end_date %}
+        <p><strong>Data de Fim:</strong> {{ booking.end_date.strftime("%d/%m/%Y") }}</p>
+        {% endif %}
+        <p><strong>Valor Total:</strong> R$ {{ "%.2f"|format(booking.total_price|float) }}</p>
+        
+        <hr style="margin: 20px 0;">
+
+        {% if booking.status == "Confirmado" %}
+            <div style="color: green; font-weight: bold;">
+                <p>🎉 Pagamento Confirmado e Reserva Efetivada! 🎉</p>
+                <p>Sua reserva para {{ booking.service.name }} está confirmada. Preparamos tudo para sua aventura!</p>
+                <p>Em breve, você receberá um e-mail com todos os detalhes e informações adicionais.</p>
+            </div>
+        {% elif booking.status == "Falha no Pagamento" %}
+            <div style="color: red; font-weight: bold;">
+                <p>😕 Falha no Pagamento 😕</p>
+                <p>Houve um problema ao processar seu pagamento para a reserva do serviço {{ booking.service.name }}.</p>
+                <p>Por favor, verifique os dados do seu cartão ou tente um novo pagamento. Se o problema persistir, entre em contato conosco.</p>
+                <p><a href="{{ url_for(\'main.book_service\', service_id=booking.service_id) }}" class="button-retry">Tentar Reservar Novamente</a></p>
+            </div>
+        {% elif booking.status == "Pendente" %}
+            <div style="color: orange; font-weight: bold;">
+                <p>⏳ Reserva Pendente ⏳</p>
+                <p>Sua solicitação de reserva para {{ booking.service.name }} está pendente.</p>
+                <p>Se você foi redirecionado para o pagamento e ainda não concluiu, por favor, finalize o processo.</p>
+                <p>Se você já tentou pagar e está vendo esta mensagem, aguarde alguns instantes ou entre em contato conosco.</p>
+            </div>
+        {% else %}
+            <div style="color: #333; font-weight: bold;">
+                <p>Status da Reserva: {{ booking.status }}</p>
+                <p>Para mais informações sobre sua reserva, por favor, entre em contato conosco.</p>
+            </div>
+        {% endif %}
+
+        <hr style="margin: 20px 0;">
+        <p><a href="{{ url_for(\'main.index\') }}">Voltar para a Página Inicial</a></p>
+    </div>
+
+<style>
+    .button-retry {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .button-retry:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+{% endblock %}
