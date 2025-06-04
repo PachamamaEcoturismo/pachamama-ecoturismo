@@ -5,3 +5,4 @@ SQLAlchemy==2.0.40
 cryptography==36.0.2
 gunicorn==20.1.0
 Flask-Babel==2.0.0
+requests==2.31.0
